@@ -14,13 +14,15 @@ def display_menu():
     print("Enter 'q' to quit.")
     print("******************\n")
 
+
+
 # Calculate change
 def calculate_change(payment, cost):
-    return payment - cost - 0.10
+    return payment - cost  # It was subtracting 0.10 cents from the final 
 
 # Operate Vending Machine
 def vending_machine():
-    items = {"1": 1.25, "2": 1.00} 
+    items = {"1": 1.25, "2": 1.00, "3": 00.75} # The third option was forgotten here 
     while True:
         display_menu
         choice = input("\nSelect an item (1-3) or 'q' to quit: ")
@@ -30,7 +32,7 @@ def vending_machine():
             break
 
         if choice not in items:
-            print("\nInvalid selection. Please choose again.\n")
+            print("\nInvalid selection. Please choose again.\n") # Works good!! 
             continue
 
         try:
@@ -39,9 +41,9 @@ def vending_machine():
                 print("\nInsufficient payment. Transaction canceled.")
                 continue
             change = calculate_change(payment, items[choice])
-            print(f"\nYour change is ${change:.2f}. Enjoy your snack!\n\n")
+            print(f"\nYour change is ${change:.2f}. Enjoy your snack!\n\n") 
         except ValueError:  # Handle non-numeric input
-            print("\nInvalid input. Please enter a numeric value.\n")
+            print("\nInvalid input. Please enter a numeric value.\n") # Also works good!! 
 
 
 if __name__ == "__main__":
